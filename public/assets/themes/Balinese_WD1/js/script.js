@@ -97,14 +97,16 @@
 
     });
 
-    var $allContentDivs = $('#sampul-konten, #users_mempelai-konten, #users_acara-konten, #users_album-konten, #ucapan-konten, #lokasi-konten, #cerita-konten').hide(); // Hide All Content Divs
+
+   // AWAL JS MENU
+    var $allContentDivs = $('#sampul-konten, #users_mempelai-konten, #users_acara-konten, #users_album-konten, #ucapan-konten, #cerita-konten, #lokasi-konten, #bingkisan-konten ').hide(); // Hide All Content Divs
     
     $("#sampul-konten").show();
     $(".dekorasi-sampul").show();
     $(".dekorasi-all").hide();
     
 
-    $('#sampul, #users_mempelai, #users_acara, #users_album, #ucapan, #lokasi, #cerita').click(function(){
+    $('#sampul, #users_mempelai, #users_acara, #users_album, #ucapan, #cerita, #lokasi, #bingkisan ').click(function(){
         var $contentDiv = $("#" + this.id + "-konten");
 
         if(this.id == "sampul"){
@@ -133,6 +135,8 @@
         }, 600);
 
     });
+
+    // AKHIR JS MENU
 
     /*=======================================
         Load more content with jQuery - May 21, 2013

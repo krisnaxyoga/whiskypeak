@@ -63,10 +63,10 @@
 
     <!-- CSS STYLE AREA -->
     <link rel="icon" href="{{ asset('/assets/base/img/favicon.ico? '.date("Y-m-d").'') }}">
-    <link href="/assets/themes/Coklat_Manis/css/bootstrap.min.css?" rel="stylesheet">
-    <link href="/assets/themes/Coklat_Manis/css/jquery.fancybox.css?" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/themes/Coklat_Manis/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="/assets/themes/Coklat_Manis/css/style.css">
+    <link href="/assets/themes/Balinese_WD1/css/bootstrap.min.css?" rel="stylesheet">
+    <link href="/assets/themes/Balinese_WD1/css/jquery.fancybox.css?" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/themes/Balinese_WD1/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/assets/themes/Balinese_WD1/css/style.css">
     {{-- @if ($cek_koneksi_internet == true)
         <script src="https://www.google.com/recaptcha/api.js"></script>
     @endif --}}
@@ -75,21 +75,21 @@
 <body>
 <!-- ============== HALAMAN AWAL =============== -->
 <div class="thebegining">
-    <div class="content-thebegining">
+    <div class="content-thebegining fadeInUp">
         <div class="kotak_cover">
             <img src="{{ $kitaPNG }}" class="cover-foto"/>
             <!-- image border cover -->
-            <img src="/assets/themes/Coklat_Manis/img/bg_flower.png" class="cover-border" /><br>
+            <img src="{{asset('assets/themes/Balinese_WD1/img/bg_flower.png')}}" class="cover-border spin" /><br>
             <!-- image border cover -->
         </div>
     </div>
 
-    <div class="salam">
-        <span class="salam_the_wedding_of">
+    <div class="salam fadeInUp">
+        <span class="salam_the_wedding_of" style="font-weight: 700">
             The Wedding of
         </span>
         <br/>
-        <span class="salam_mempelai">
+        <span class="salam_mempelai" style="font-weight: 500">
             {{-- @foreach($users_mempelai as $mempelai)
                 {{ $mempelai->nama_panggilan_pria }} & {{ $mempelai->nama_panggilan_wanita }}
             @endforeach --}}
@@ -98,7 +98,7 @@
 
         @if(!empty($invite))
             <div class="salam_kotak">
-                <img src="/assets/themes/Coklat_Manis/img/bg_kotak_nama_undangan.png" alt="Snow">
+                <img src="/assets/themes/Balinese_WD1/img/bg_kotak_nama_undangan.png" alt="Snow">
                 <div class="salam_kotak_kepada">
                     <span>Kepada Yth:</span>
                 </div>
@@ -112,26 +112,55 @@
             </div>
         @endif
     </div>
-    <a class="link_klik_untuk_buka_undangan">klik untuk membuka undangan</a>
+    <a class="link_klik_untuk_buka_undangan btn btn-info animate__heartBeat">Open Invitation</a>
+
+    {{-- <div>
+
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        
+        <defs>
+        
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        
+        </defs>
+        
+        <g class="parallax">
+        
+        <use xlink:href="#gentle-wave" x="48" y="0" fill="#ffeeda" />
+        
+        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+        
+        <use xlink:href="#gentle-wave" x="48" y="5" fill="#fff7da" />
+        
+        <use xlink:href="#gentle-wave" x="48" y="7" fill="#fbfaef" />
+        
+        </g>
+        
+        </svg>
+        
+        </div> --}}
 </div>
-<div class="dekorasi-all">
+<div class="dekorasi-all fadeInUp">
     {{-- GAMBAR DEKORASI TENGAH --}}
-    <img id="" src="{{ asset('assets/themes/Coklat_Manis/img/top_flower.png') }}" class="imgatas">
+    
+    {{-- <img id="" src="{{ asset('assets/themes/Balinese_WD1/img/top_flower.png') }}" class="imgatas"> --}}
 
     {{-- GAMBAR DEKORASI KIRI --}}
-    {{-- <img src="{{ asset('assets/themes/Coklat_Manis/img/kiri-atas.png') }}" class="imgatas-kiri"> --}}
+    <img src="{{ asset('assets/themes/Balinese_WD1/img/kiri-atas.png') }}" class="imgatas-kiri">
     {{-- GAMBAR DEKORASI KANAN --}}
-    {{-- <img src="{{ asset('assets/themes/Coklat_Manis/img/kanan-atas.png') }}" class="imgatas-kanan --}}
+    <img src="{{ asset('assets/themes/Balinese_WD1/img/kanan-atas.png') }}" class="imgatas-kanan"/>
 </div>
 
-<div class="dekorasi-sampul">
+<div class="dekorasi-sampul fadeInUp">
     {{-- GAMBAR DEKORASI TENGAH --}}
-    {{-- <img id="" src="{{ asset('assets/themes/Coklat_Manis/img/top_flower.png') }}" class="imgatas"> --}}
+    {{-- <img id="" src="{{ asset('assets/themes/Balinese_WD1/img/top_flower.png') }}" class="imgatas"> --}}
 
     {{-- GAMBAR DEKORASI KIRI --}}
-    {{-- <img src="{{ asset('assets/themes/Coklat_Manis/img/kiri-atas.png') }}" class="imgatas-kiri"> --}}
+    <img src="{{ asset('assets/themes/Balinese_WD1/img/kiri-atas.png') }}" class="imgatas-kiri">
     {{-- GAMBAR DEKORASI KANAN --}}
-    {{-- <img src="{{ asset('assets/themes/Coklat_Manis/img/kanan-atas.png') }}" class="imgatas-kanan"> --}}
+    <img src="{{ asset('assets/themes/Balinese_WD1/img/kanan-atas.png') }}" class="imgatas-kanan">
 </div>
 
 <div id="konten" style="z-index: 1;">
@@ -149,14 +178,14 @@
       		<tbody>
       		 <tr>
                 <th style="text-align: center;">
-                    <span class="the-wedding">- THE WEDDING OF -</span>
+                    <span class="the-wedding fadeInUp">- THE WEDDING OF -</span>
                 </th>
             </tr>
       		<tr>
       			<th style="text-align: center;">
                     {{-- <span class="nama-mempelai"><?php //echo $row_users_mempelai->nama_panggilan_pria; ?> & <?php //echo $row_users_mempelai->nama_panggilan_wanita; ?></span><br> --}}
 
-                    <span class="nama-mempelai">jhon & Maria</span><br>
+                    <span class="nama-mempelai fadeInUp">jhon & Maria</span><br>
                     <span class="tanggal-weddingnya"></span>
                 </th>
       		</tr>
@@ -167,10 +196,10 @@
       		</tr>
             <tr>
                 <th style="position: relative;text-align: center;">
-					<img src="{{ $kitaPNG }} " class="cover-foto"/>
+					<img src="{{ $kitaPNG }} " class="cover-foto fadeInUp"/>
 
 					<!-- image border cover -->
-                    <img src="/assets/themes/Coklat_Manis/img/bg_flower.png" class="cover-border" /><br>
+                    <img src="{{ asset('assets/themes/Balinese_WD1/img/bg_flower.png') }}" class="cover-border spin" /><br>
 					<!-- image border cover -->
 
                 </th>
@@ -181,7 +210,7 @@
 
 	<!-- ============== users_MEMPELAI =============== -->
     <div id="users_mempelai-konten" class="konten" style="display: none;">
-		<img src="{{ asset('/assets/base/img/o-swastyastu-1.png') }}" class="mempelai-salam-pembuka"/><br>
+		<img src="{{ asset('assets/base/img/o-swastyastu-1.png') }}" class="mempelai-salam-pembuka fadeInUp"/><br>
 		<br/>
 
 		<?php
@@ -194,19 +223,19 @@
 		// }
 		?>
 		{{-- <p class="mempelai-intermezzo" ><?php //echo $kata2_mempelai; ?></p> --}}
-        <p class="mempelai-intermezzo" >kata kata dari mempelai</p>
+        <p class="mempelai-intermezzo fadeInUp" >kata kata dari mempelai</p>
 
 
-		<img src="{{ asset($groomPNG) }}" class="mempelai-img" />
+		<img src="{{ asset($groomPNG) }}" class="mempelai-img fadeInUp" />
 
-		<h1 class="mempelai-pria-nama">jhon</h1>
-		<p class="mempelai-pria-ortu">Putra dari Bpk agus dan Ibu ayu<?php //echo "Putra dari Bpk. ".$row_users_mempelai->nama_ayah_pria . " dan Ibu " .$row_users_mempelai->nama_ibu_pria  ?></p>
-		<h1 class="dengan">dengan</h1>
+		<h1 class="mempelai-pria-nama fadeInUp">jhon</h1>
+		<p class="mempelai-pria-ortu fadeInUp">Putra dari Bpk agus dan Ibu ayu<?php //echo "Putra dari Bpk. ".$row_users_mempelai->nama_ayah_pria . " dan Ibu " .$row_users_mempelai->nama_ibu_pria  ?></p>
+		<h1 class="dengan fadeInUp">dengan</h1>
 
-		<img src="{{asset($bridePNG) }} " class="mempelai-img"/>
+		<img src="{{asset($bridePNG) }} " class="mempelai-img fadeInUp"/>
 
-		<h1 class="mempelai-wanita-nama"> maria<?php //echo $row_users_mempelai->nama_wanita; ?></h1>
-		<p class="mempelai-wanita-ortu">Putri dari Bpk. albert dan ibu melisa<?php //echo "Putri dari Bpk. ".$row_users_mempelai->nama_ayah_wanita . " dan Ibu " .$row_users_mempelai->nama_ibu_wanita  ?></p>
+		<h1 class="mempelai-wanita-nama fadeInUp"> maria<?php //echo $row_users_mempelai->nama_wanita; ?></h1>
+		<p class="mempelai-wanita-ortu fadeInUp">Putri dari Bpk. albert dan ibu melisa<?php //echo "Putri dari Bpk. ".$row_users_mempelai->nama_ayah_wanita . " dan Ibu " .$row_users_mempelai->nama_ibu_wanita  ?></p>
 
 		</div>
 		<?php
@@ -223,7 +252,7 @@
 
     <div id="users_acara-konten" style="display: none;" class="konten">
 
-        <div class="section-title">
+        <div class="section-title fadeInUp">
             <h2> Acara </h2>
 
             {{-- Load Sepatah kata di Acara --}}
@@ -243,7 +272,7 @@
         </div>
 
         <div class="acaranya">
-            <table class="tb-acara">
+            <table class="tb-acara fadeInUp">
                 <thead>
                     <th colspan="4" class="acara-title">- AKAD NIKAH -</th>
                 </thead>
@@ -264,7 +293,7 @@
 
                     <tr>
                         <th class="tb-ic-acara"><i class="mdi mdi-map-marker icon-acara"></i></th>
-                        <th class "tb-ket-acara"> Tempat</th>
+                        <th class="tb-ket-acara"> Tempat</th>
                         <th class="tb-anu-acara">:</th>
                         {{-- <th class="tb-isi-acara">{{ $row_users_acara->tempat_akad }}<br>{{ $row_users_acara->alamat_akad }}</th> --}}
                         <th class="tb-isi-acara">
@@ -275,29 +304,29 @@
                 </tbody>
             </table>
 
-            <table class="tb-acara">
+            <table class="tb-acara fadeInUp">
                 <thead>
-                    <th colspan="4" class="acara-title">- RESEPSI -</th>
+                    <th colspan="4" class="acara-title fadeInUp">- RESEPSI -</th>
                 </thead>
                 <tbody>
                     <tr>
                         <th class="tb-ic-acara"><i class="mdi mdi-calendar icon-acara"></i></th>
-                        <th class="tb-ket-acara"> Tanggal</th>
+                        <th class="tb-ket-acara fadeInUp"> Tanggal</th>
                         <th class="tb-anu-acara">:</th>
-                        <th class="tb-isi-acara " id="tanggal-acara-resepsi">{{ $tanggal_resepsi }}</th>
+                        <th class="tb-isi-acara fadeInUp" id="tanggal-acara-resepsi">{{ $tanggal_resepsi }}</th>
                     </tr>
 
                     <tr>
                         <th class="tb-ic-acara"><i class="mdi mdi-timer icon-acara"></i></th>
-                        <th class="tb-ket-acara"> Jam</th>
-                        <th class="tb-anu-acara">:</th>
-                        <th class="tb-isi-acara">{{ now() }}</th>
+                        <th class="tb-ket-acara fadeInUp"> Jam</th>
+                        <th class="tb-anu-acara fadeInUp">:</th>
+                        <th class="tb-isi-acara fadeInUp">{{ now() }}</th>
                     </tr>
 
                     <tr>
                         <th class="tb-ic-acara"><i class="mdi mdi-map-marker icon-acara"></i></th>
-                        <th class="tb-ket-acara"> Tempat</th>
-                        <th class="tb-anu-acara">: tess</th>
+                        <th class="tb-ket-acara fadeInUp"> Tempat</th>
+                        <th class="tb-anu-acara fadeInUp">: tess</th>
                         {{-- <th class="tb-isi-acara">{{ $row_users_acara->tempat_resepsi }}<br>{{ $row_users_acara->alamat_resepsi }}</th> --}}
                     </tr>
                 </tbody>
@@ -315,7 +344,7 @@
                 @endif
             @endif
         @endforeach --}}
-        <p>sepatah_kata_isi2</p>
+        <p class="fadeInUp">sepatah_kata_isi2</p>
         {{-- {{ $kata2_acara_2 }} --}}
     </div>
 {{-- @endforeach --}}
@@ -325,7 +354,7 @@
         <div class="container">
             <div class="row">
                 <div class="col col-xs-12">
-                    <div class="section-title">
+                    <div class="section-title fadeInUp">
                         <h2>Album Kami</h2>
                     </div>
                 </div>
@@ -375,10 +404,10 @@
 <!-- ============== DOA DAN UCAPAN =============== -->
 <div id="ucapan-konten" style="display: none;" class="konten">
     <div class="col-12 ucapan-field">
-        <div class="section-title">
+        <div class="section-title fadeInUp">
             <h2>Do'a dan Ucapan</h2>
         </div>
-        <div class="row">
+        <div class="row fadeInUp">
             <div class="col-12">
                 <div class="form-group">
                     <input id="doa_dan_ucapan_nama_pengunjung" type="text" class="form-control mt-2" placeholder="Nama Anda" value="{{ $invite }}" required>
@@ -407,12 +436,12 @@
                     <div class="g-recaptcha" data-sitekey="{{ $website_umum[20]->website_isi }}" data-callback="ENABLEDsubmit_doa_dan_ucapan"></div>
                     <br>
                 @endif --}}
-                <button id="submit_doa_dan_ucapan" class="btn tombol_tema btn-block">Kirim</button>
+                <button id="submit_doa_dan_ucapan fadeInUp" class="btn tombol_tema btn-block">Kirim</button>
                 <img src="/assets/base/img/loadinga.svg" height="30px" style="display:none;" id="loading_">
             </div>
         </div>
     </div>
-    <div class="komen-netizen">
+    <div class="komen-netizen fadeInUp">
         <div class="layout-komen">
             {{-- @foreach($users_doa_dan_ucapan as $key => $data)
                 <div class="komen">
@@ -425,7 +454,7 @@
                 </div>
             @endforeach --}}
         </div>
-        <a href="#" id="loadMore" class="btn btn-primary btn-block" role="button">Lebih Banyak.</a>
+        <a href="#" id="loadMore" class="btn btn-primary btn-block fadeInUp" role="button">Lebih Banyak.</a>
     </div>
 </div>
 
@@ -433,7 +462,7 @@
 <div id="cerita-konten" style="display: none;" class="konten">
     <section class="cerita section-padding" id="cerita">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title fadeInUp">
                 <h2> Cerita Kita </h2>
             </div>
             <div class="row">
@@ -490,10 +519,10 @@
         //     if (preg_match("/$dicari/i", $kalimat_akad)) {
         ?>
         <div class="col-12">
-            <div class="section-title">
+            <div class="section-title fadeInUp">
                 <h2>Denah Lokasi<br />Akad & Resepsi </h2>
             </div>
-            <div class="col-12 maps">
+            <div class="col-12 maps fadeInUp">
                 {{-- {!! $kalimat_akad !!} --}}
             </div>
         </div>
@@ -502,12 +531,12 @@
         // } else {
         //     if (preg_match("/$dicari/i", $kalimat_akad) && preg_match("/$dicari/i", $kalimat_resepsi)) {
         ?>
-        <div class="section-title">
+        <div class="section-title fadeInUp">
             <h2>Denah Lokasi</h2>
         </div>
         <div class="col-12">
             <div class="col-6">
-                <div class="section-title">
+                <div class="section-title fadeInUp">
                     <h2>Akad Nikah</h2>
                 </div>
                 <div class="maps">
@@ -515,10 +544,10 @@
                 </div>
             </div>
             <div class="col-6 ">
-                <div class="section-title">
+                <div class="section-title fadeInUp">
                     <h2>Resepsi Pernikahan </h2>
                 </div>
-                <div class="maps">
+                <div class="maps fadeInUp">
                     {{-- {!! $kalimat_resepsi !!} --}}
                 </div>
             </div>
@@ -535,10 +564,10 @@
             //     // TAMPILKAN MAP
         ?>
         <div class="col-12">
-            <div class="section-title">
+            <div class="section-title fadeInUp">
                 <h2>Denah Lokasi<br />Akad & Resepsi </h2>
             </div>
-            <div class="col-12 maps">
+            <div class="col-12 maps fadeInUp">bingkisan-konten
                 {{-- {!! $gmap_sebenarnya !!} --}}
             </div>
         </div>
@@ -553,13 +582,13 @@
 
 	<!-- ============== BINGKISAN =============== -->
 <div id="bingkisan-konten" style="display: none;" class="konten">
-    <div class="section-title">
+    <div class="section-title fadeInUp">
         <h2>Berikan Bingkisan</h2>
     </div>
     <div class="d-flex justify-content-center text-center">
         <div class="col-md-4 col-sm-12">
-            <p class="description">Bagi yang ingin memberikan Kado Pernikahan untuk pernikahan kami, bisa melalui E-Money / Rekening Bank berikut:</p>
-            <div class="card">
+            <p class="description fadeInUp">Bagi yang ingin memberikan Kado Pernikahan untuk pernikahan kami, bisa melalui E-Money / Rekening Bank berikut:</p>
+            <div class="card fadeInUp">
                 <script src="{{ asset('assets/base/js/clipboard.min.js') }}"></script>
                 <ul class="list-group list-group-flush">
                     @php
@@ -592,8 +621,8 @@
     </div>
 </div>
 
-	<a id="bingkisan" style="cursor:pointer;" class="tombol-bingkisan">
-		<i class="mdi mdi-gift"> Beri Bingkisan</i>
+	<a id="bingkisan" href="#bingkisan-konten" style="cursor:pointer;" class="tombol-bingkisan">
+		<i class="mdi mdi-gift fadeInUp"> Beri Bingkisan</i>
 	</a>
 	<!-- TUTUP BINGKISAN -->
 
@@ -664,6 +693,13 @@
                     </div>
                 </div>
 
+                <div class="mobile-bottom-nav__item" id="ucapan">
+                    <div class="mobile-bottom-nav__item-content icons">
+                        <i class="navbar-icon mdi mdi-message-bulleted"></i>
+                        Ucapan
+                    </div>
+                </div>
+
                 {{-- @foreach ($undangan_fitur as $row)
                 <div class="mobile-bottom-nav__item" id="ucapan" @if($row->komen != 1) style="display:none;" @endif>
                     <div class="mobile-bottom-nav__item-content icons">
@@ -679,6 +715,26 @@
     <div class="container-fluid px-0">
         <div class="row no-gutters">
             <div class="col-12" style="display: flex; margin-bottom: 5px; margin-top: 5px;">
+                <div class="mobile-bottom-nav__item" id="users_album" >
+                    <div class="mobile-bottom-nav__item-content icons">
+                        <i class="navbar-icon mdi mdi-image"></i>
+                        Album
+                    </div>
+                </div>
+
+                <div class="mobile-bottom-nav__item" id="cerita" >
+                    <div class="mobile-bottom-nav__item-content icons">
+                        <i class="navbar-icon mdi mdi-chart-bubble"></i>
+                        Cerita Kita
+                    </div>
+                </div>
+
+                <div class="mobile-bottom-nav__item" id="lokasi">
+                    <div class="mobile-bottom-nav__item-content icons">
+                        <i class="navbar-icon mdi mdi-map-marker"></i>
+                        Lokasi
+                    </div>
+                </div>
                 {{-- @foreach ($undangan_fitur as $row)
                 <div class="mobile-bottom-nav__item" id="users_album" @if($row->gallery != 1) style="display:none;" @endif>
                     <div class="mobile-bottom-nav__item-content icons">
@@ -720,20 +776,21 @@
 
 <div class="dekorasi-all dekorasi-all-bawah">
     <!-- GAMBAR DEKORASI TENGAH -->
-    <img class="imgbawah" src="{{ asset('assets/themes/Coklat_Manis/img/bottom_flower.png') }}">
+    {{-- <img class="imgbawah" src="{{ asset('assets/themes/Balinese_WD1/img/bottom_flower.png') }}"> --}}
     <!-- GAMBAR DEKORASI KIRI -->
-    <!-- <img class="imgbawah-kanan" src="{{ asset('assets/themes/Coklat_Manis/img/kanan-bawah.png') }}"> -->
+    <img class="imgbawah-kanan fadeInUp" src="{{ asset('assets/themes/Balinese_WD1/img/kanan-bawah.png') }}">
     <!-- GAMBAR DEKORASI KIRI -->
-    <!-- <img class="imgbawah-kiri" src="{{ asset('assets/themes/Coklat_Manis/img/kiri-bawah.png') }}"> -->
+     <img class="imgbawah-kiri fadeInUp" src="{{ asset('assets/themes/Balinese_WD1/img/kiri-bawah.png') }}"> 
 </div>
 
 <div class="dekorasi-sampul dekorasi-sampul-bawah">
     <!-- GAMBAR DEKORASI TENGAH -->
-    <!-- <img class="imgbawah" src="{{ asset('assets/themes/Coklat_Manis/img/bottom_flower.png') }}"> -->
+   
+    {{-- <img class="imgbawah" src="{{ asset('assets/themes/Balinese_WD1/img/bottom_flower.png') }}">  --}}
     <!-- GAMBAR DEKORASI KIRI -->
-    <!-- <img class="imgbawah-kanan" src="{{ asset('assets/themes/Coklat_Manis/img/kanan-bawah.png') }}"> -->
+    <img class="imgbawah-kanan fadeInUp" src="{{ asset('assets/themes/Balinese_WD1/img/kanan-bawah.png') }}"> 
     <!-- GAMBAR DEKORASI KIRI -->
-    <!-- <img class="imgbawah-kiri" src="{{ asset('assets/themes/Coklat_Manis/img/kiri-bawah.png') }}"> -->
+    <img class="imgbawah-kiri fadeInUp" src="{{ asset('assets/themes/Balinese_WD1/img/kiri-bawah.png') }}"> 
 </div>
 
 <!-- mengirimkan data PHP ke JavaScript -->
@@ -743,9 +800,9 @@
 <!-- mengirimkan data PHP ke JavaScript -->
 
 <!-- JS AREA -->
-<script src="{{ asset('assets/themes/Coklat_Manis/js/moment-with-locales.js') }}"></script>
-<script src="{{ asset('assets/themes/Coklat_Manis/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('assets/themes/Coklat_Manis/js/jquery.min.js') }}"></script>
-<script src="{{ asset('assets/themes/Coklat_Manis/js/jquery-plugin-collection.js') }}"></script>
-<script src="{{ asset('assets/themes/Coklat_Manis/js/script.js') }}"></script>
+<script src="{{ asset('assets/themes/Balinese_WD1/js/moment-with-locales.js') }}"></script>
+<script src="{{ asset('assets/themes/Balinese_WD1/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/themes/Balinese_WD1/js/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/themes/Balinese_WD1/js/jquery-plugin-collection.js') }}"></script>
+<script src="{{ asset('assets/themes/Balinese_WD1/js/script.js') }}"></script>
 </html>
