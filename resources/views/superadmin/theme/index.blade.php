@@ -16,10 +16,8 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
+                                    <th>#</th>
                                     <th>Name</th>
-                                    <th>Price</th>
-                                    <th>Sambutan</th>
-                                    <th>Penutup</th>
                                     <th>created</th>
                                     <th>action</th>
                                 </tr>
@@ -27,14 +25,12 @@
                             <tbody>
                                 @foreach ($data as $item)
                                 <tr>
+                                    <td><img src="{{ asset($item->code) }}" style="width:200px" alt=""> </td>
                                     <td>{{ $item->name }}</td>
-                                    <td>{{ $item->price }}</td>
-                                    <td>{{ strip_tags($item->sambutan) }}</td>
-                                    <td>{{ strip_tags($item->penutup) }}</td>
                                     <td>{{ $item->created_at }}</td>
-                                    <td><a href="{{ route('themes.edit',$item->id) }}" class="btn btn-datatable btn-icon btn-transparent-dark mr-2"><i data-feather="edit"></i></a>
+                                    <td><a href="" class="btn btn-datatable btn-icon btn-transparent-dark mr-2"><i data-feather="edit"></i></a>
 
-                                        <form class="d-inline" action="{{route('themes.destroy', $item->id)}}" method="POST" onSubmit="return confirm('Apakah anda yakin akan menghapus data ini?');">
+                                        <form class="d-inline" action="" method="POST" onSubmit="return confirm('Apakah anda yakin akan menghapus data ini?');">
                                             @csrf
                                             @method('delete')
 
