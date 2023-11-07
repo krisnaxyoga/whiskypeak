@@ -108,7 +108,7 @@
                     {{-- {{ $invite }} --}} juana
                 </div>
             </div>
-        @else 
+        @else
             <div class="salam_kotak_nama_undangan_notfound">
                 Anda diundang ke pesta pernikahan kami &#128512;
             </div>
@@ -119,34 +119,34 @@
     {{-- <div>
 
         <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-        
+
         viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-        
+
         <defs>
-        
+
         <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-        
+
         </defs>
-        
+
         <g class="parallax">
-        
+
         <use xlink:href="#gentle-wave" x="48" y="0" fill="#ffeeda" />
-        
+
         <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-        
+
         <use xlink:href="#gentle-wave" x="48" y="5" fill="#fff7da" />
-        
+
         <use xlink:href="#gentle-wave" x="48" y="7" fill="#fbfaef" />
-        
+
         </g>
-        
+
         </svg>
-        
+
         </div> --}}
 </div>
 <div class="dekorasi-all fadeInUp">
     {{-- GAMBAR DEKORASI TENGAH --}}
-    
+
     @if($theme->tengah_atas != 0)
         <img id="" src="{{ $theme->tengah_atas }}" class="imgatas">
     @endif
@@ -155,7 +155,7 @@
     @if($theme->kiri_atas != 0)
           <img src="{{ $theme->kiri_atas }}" class="imgatas-kiri">
     @endif
-  
+
     {{-- GAMBAR DEKORASI KANAN --}}
     @if($theme->kanan_atas != 0)
         <img src="{{ $theme->kanan_atas }}" class="imgatas-kanan"/>
@@ -299,14 +299,14 @@
                                     <th class="tb-anu-acara">:</th>
                                     <th class="tb-isi-acara" id="tanggal-acara-akad">{{ $tanggal_akad }}</th>
                                 </tr>
-            
+
                                 <tr>
                                     <th class="tb-ic-acara"><i class="mdi mdi-timer icon-acara"></i></th>
                                     <th class="tb-ket-acara"> Jam</th>
                                     <th class="tb-anu-acara">:</th>
                                     <th class="tb-isi-acara">{{ now() }}</th>
                                 </tr>
-            
+
                                 <tr>
                                     <th class="tb-ic-acara"><i class="mdi mdi-map-marker icon-acara"></i></th>
                                     <th class="tb-ket-acara"> Tempat</th>
@@ -319,7 +319,7 @@
                                 </tr>
                             </tbody>
                         </table>
-            
+
                     </div>
                 </div>
             </div>
@@ -337,14 +337,14 @@
                                     <th class="tb-anu-acara">:</th>
                                     <th class="tb-isi-acara fadeInUp" id="tanggal-acara-resepsi">{{ $tanggal_resepsi }}</th>
                                 </tr>
-            
+
                                 <tr>
                                     <th class="tb-ic-acara"><i class="mdi mdi-timer icon-acara"></i></th>
                                     <th class="tb-ket-acara fadeInUp"> Jam</th>
                                     <th class="tb-anu-acara fadeInUp">:</th>
                                     <th class="tb-isi-acara fadeInUp">{{ now() }}</th>
                                 </tr>
-            
+
                                 <tr>
                                     <th class="tb-ic-acara"><i class="mdi mdi-map-marker icon-acara"></i></th>
                                     <th class="tb-ket-acara fadeInUp"> Tempat</th>
@@ -356,8 +356,8 @@
                     </div>
                 </div>
             </div>
-            
-            
+
+
         </div>
 
         {{-- Load Sepatah kata di users_Mempelai --}}
@@ -648,6 +648,9 @@
     </div>
 </div>
 
+<a href="#" class="tombol-musik" id="toggleMusicButton">  <span id="musicIcon" class="music-icon">&#9658;</span>
+    <span id="pauseIcon" class="pause-icon">&#9612;&#9612;</span></a>
+
 	<a id="bingkisan" href="#bingkisan-konten" style="cursor:pointer;" class="tombol-bingkisan">
 		<i class="mdi mdi-gift fadeInUp"> Beri Bingkisan</i>
 	</a>
@@ -818,18 +821,18 @@
 
 <div class="dekorasi-sampul dekorasi-sampul-bawah">
     <!-- GAMBAR DEKORASI TENGAH -->
-   
+
     @if($theme->tengah_bawah != 0)
     <img class="imgbawah" src="{{$theme->tengah_bawah}}">
     @endif
 
     <!-- GAMBAR DEKORASI KIRI -->
     @if($theme->kanan_bawah != 0)
-    <img class="imgbawah-kanan fadeInUp" src="{{ $theme->kanan_bawah }}"> 
+    <img class="imgbawah-kanan fadeInUp" src="{{ $theme->kanan_bawah }}">
     @endif
     <!-- GAMBAR DEKORASI KIRI -->
     @if($theme->kiri_bawah != 0)
-    <img class="imgbawah-kiri fadeInUp" src="{{ $theme->kiri_bawah }}"> 
+    <img class="imgbawah-kiri fadeInUp" src="{{ $theme->kiri_bawah }}">
     @endif
 </div>
 
@@ -845,4 +848,28 @@
 <script src="{{ asset('assets/themes/Balinese_WD1/js/jquery.min.js') }}"></script>
 <script src="{{ asset('assets/themes/Balinese_WD1/js/jquery-plugin-collection.js') }}"></script>
 <script src="{{ asset('assets/themes/Balinese_WD1/js/script.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    const audio = document.getElementById('audio');
+    const toggleMusicButton = document.getElementById('toggleMusicButton');
+    const musicIcon = document.getElementById('musicIcon');
+    const pauseIcon = document.getElementById('pauseIcon');
+    let isPlaying = true;
+
+    toggleMusicButton.addEventListener('click', function() {
+        if (isPlaying) {
+            audio.pause();
+            isPlaying = false;
+            musicIcon.style.display = 'none';
+            pauseIcon.style.display = 'inline';
+        } else {
+            audio.play();
+            isPlaying = true;
+            musicIcon.style.display = 'inline';
+            pauseIcon.style.display = 'none';
+        }
+    });
+    </script>
+
+
 </html>

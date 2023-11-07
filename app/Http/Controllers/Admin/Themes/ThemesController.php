@@ -6,9 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Themes;
 use Illuminate\Support\Facades\File;
-use Intervention\Image\Facades\Image;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
+// use Intervention\Image\Facades\Image;
+// use Illuminate\Support\Facades\Auth;
+// use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Support\Facades\Validator;
 
@@ -40,7 +40,7 @@ class ThemesController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required',
         ]);
-    
+
         if ($validator->fails()) {
             return redirect()
                 ->back()
@@ -48,7 +48,7 @@ class ThemesController extends Controller
                 ->withInput($request->all());
         }
 
-        
+
         $feature = "";
         $code = "";
         $bordercover = "";
@@ -135,12 +135,12 @@ class ThemesController extends Controller
         $data->tengah_bawah = $tengahbawah;
         $data->status = "1";
         $data->save();
-    
+
         return redirect()->back()->with('success', 'Data saved!');
     }
 
-    
-    
+
+
     /**
      * Display the specified resource.
      */
@@ -167,7 +167,7 @@ class ThemesController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required',
         ]);
-    
+
         if ($validator->fails()) {
             return redirect()
                 ->back()
@@ -185,10 +185,11 @@ class ThemesController extends Controller
             $background = $request->file('background');
             $filename1 = time() . 'background' . '.'. $background->getClientOriginalExtension();
             $background->move(public_path('theme'), $filename1);
+            $feature = "/theme/".$filename1;
         } else {
             $filename1 = $data->background;
         }
-        
+
         if ($request->hasFile('code')) {
             // Hapus gambar lama
             if (file_exists(public_path($data->code))) {
@@ -197,10 +198,11 @@ class ThemesController extends Controller
             $codex = $request->file('code');
             $filename2 = time() . 'morkup' . '.'. $codex->getClientOriginalExtension();
             $codex->move(public_path('theme'), $filename2);
+            $code = "/theme/".$filename2;
         } else {
             $filename2 = $data->code;
         }
-        
+
         if ($request->hasFile('bordercover')) {
             // Hapus gambar lama
             if (file_exists(public_path($data->cover_border))) {
@@ -209,10 +211,11 @@ class ThemesController extends Controller
             $bordercoverx = $request->file('bordercover');
             $filename3 = time() . 'bordercover' . '.'. $bordercoverx->getClientOriginalExtension();
             $bordercoverx->move(public_path('theme'), $filename3);
+            $bordercover = "/theme/".$filename3;
         } else {
             $filename3 = $data->cover_border;
         }
-        
+
         if ($request->hasFile('kiriatas')) {
             // Hapus gambar lama
             if (file_exists(public_path($data->kiri_atas))) {
@@ -221,10 +224,11 @@ class ThemesController extends Controller
             $kiriatasx = $request->file('kiriatas');
             $filename4 = time() . 'kiriatas' . '.'. $kiriatasx->getClientOriginalExtension();
             $kiriatasx->move(public_path('theme'), $filename4);
+            $kiriatas = "/theme/".$filename4;
         } else {
             $filename4 = $data->kiri_atas;
         }
-        
+
         if ($request->hasFile('kananatas')) {
             // Hapus gambar lama
             if (file_exists(public_path($data->kanan_atas))) {
@@ -233,10 +237,12 @@ class ThemesController extends Controller
             $kananatasx = $request->file('kananatas');
             $filename5 = time() . 'kananatas' . '.'. $kananatasx->getClientOriginalExtension();
             $kananatasx->move(public_path('theme'), $filename5);
+
+            $kananatas = "/theme/".$filename5;
         } else {
             $filename5 = $data->kanan_atas;
         }
-        
+
         if ($request->hasFile('tengahatas')) {
             // Hapus gambar lama
             if (file_exists(public_path($data->tengah_atas))) {
@@ -245,10 +251,13 @@ class ThemesController extends Controller
             $tengahatasx = $request->file('tengahatas');
             $filename6 = time() . 'tengahatas' . '.'. $tengahatasx->getClientOriginalExtension();
             $tengahatasx->move(public_path('theme'), $filename6);
+
+
+            $tengahatas = "/theme/".$filename6;
         } else {
             $filename6 = $data->tengah_atas;
         }
-        
+
         if ($request->hasFile('kiribawah')) {
             // Hapus gambar lama
             if (file_exists(public_path($data->kiri_bawah))) {
@@ -257,10 +266,12 @@ class ThemesController extends Controller
             $kiribawahx = $request->file('kiribawah');
             $filename7 = time() . 'kiribawah' . '.'. $kiribawahx->getClientOriginalExtension();
             $kiribawahx->move(public_path('theme'), $filename7);
+
+            $kiribawah = "/theme/".$filename7;
         } else {
             $filename7 = $data->kiri_bawah;
         }
-        
+
         if ($request->hasFile('kananbawah')) {
             // Hapus gambar lama
             if (file_exists(public_path($data->kanan_bawah))) {
@@ -269,10 +280,12 @@ class ThemesController extends Controller
             $kananbawahx = $request->file('kananbawah');
             $filename8 = time() . 'kananbawah' . '.'. $kananbawahx->getClientOriginalExtension();
             $kananbawahx->move(public_path('theme'), $filename8);
+
+            $kananbawah = "/theme/".$filename8;
         } else {
             $filename8 = $data->kanan_bawah;
         }
-        
+
         if ($request->hasFile('tengahbawah')) {
             // Hapus gambar lama
             if (file_exists(public_path($data->tengah_bawah))) {
@@ -281,20 +294,15 @@ class ThemesController extends Controller
             $tengahbawahx = $request->file('tengahbawah');
             $filename9 = time() . 'tengahbawah' . '.'. $tengahbawahx->getClientOriginalExtension();
             $tengahbawahx->move(public_path('theme'), $filename9);
+
+            $tengahbawah = "/theme/".$filename9;
         } else {
             $filename9 = $data->tengah_bawah;
+
         }
-        
-        $feature = "/theme/".$filename1;
-        $code = "/theme/".$filename2;
-        $bordercover = "/theme/".$filename3;
-        $kiriatas = "/theme/".$filename4;
-        $kananatas = "/theme/".$filename5;
-        $tengahatas = "/theme/".$filename6;
-        $kiribawah = "/theme/".$filename7;
-        $kananbawah = "/theme/".$filename8;
-        $tengahbawah = "/theme/".$filename9;
-        
+
+
+
         $data->name = $request->name;
         $data->background = $feature;
         $data->code = $code;
@@ -307,7 +315,7 @@ class ThemesController extends Controller
         $data->tengah_bawah = $tengahbawah;
         $data->status = "1";
         $data->save();
-    
+
         return redirect()->back()->with('success', 'Data saved!');
     }
 
@@ -319,48 +327,48 @@ class ThemesController extends Controller
         $data = Themes::find($id);
 
         if ($data) {
-            if (File::exists(public_path($data->ba))) 
+            if (File::exists(public_path($data->ba)))
             {
                 File::delete(public_path($data->ba));
             }
 
-            if (File::exists(public_path($data->code))) 
+            if (File::exists(public_path($data->code)))
             {
                 File::delete(public_path($data->code));
             }
 
-            if (File::exists(public_path($data->cover_border))) 
+            if (File::exists(public_path($data->cover_border)))
             {
                 File::delete(public_path($data->cover_border));
             }
 
-            if (File::exists(public_path($data->kiri_atas))) 
+            if (File::exists(public_path($data->kiri_atas)))
             {
                 File::delete(public_path($data->kiri_atas));
             }
 
-            if (File::exists(public_path($data->kanan_atas))) 
+            if (File::exists(public_path($data->kanan_atas)))
             {
                 File::delete(public_path($data->kanan_atas));
             }
 
-            if (File::exists(public_path($data->tengah_atas))) 
+            if (File::exists(public_path($data->tengah_atas)))
             {
                 File::delete(public_path($data->tengah_atas));
             }
-            if (File::exists(public_path($data->kiri_bawah))) 
+            if (File::exists(public_path($data->kiri_bawah)))
             {
                 File::delete(public_path($data->kiri_bawah));
             }
-            if (File::exists(public_path($data->kanan_bawah))) 
+            if (File::exists(public_path($data->kanan_bawah)))
             {
                 File::delete(public_path($data->kanan_bawah));
             }
-            if (File::exists(public_path($data->tengah_bawah))) 
+            if (File::exists(public_path($data->tengah_bawah)))
             {
                 File::delete(public_path($data->tengah_bawah));
             }
-            
+
             $data->delete();
         }
 
