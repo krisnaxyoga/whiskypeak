@@ -69,6 +69,22 @@
                             <div class="nav-link-icon"><i data-feather="box"></i></div>
                             Theme
                         </a>
+                        <a class="nav-link" href="#">
+                            <div class="nav-link-icon"><i data-feather="git-merge"></i></div>
+                            kata kata
+                        </a>
+                         <a class="nav-link" href="#">
+                            <div class="nav-link-icon"><i data-feather="git-merge"></i></div>
+                            Paket undangan
+                        </a>
+                        <a class="nav-link" href="#">
+                            <div class="nav-link-icon"><i data-feather="git-merge"></i></div>
+                            fitur
+                        </a>
+                        <a class="nav-link" href="#">
+                            <div class="nav-link-icon"><i data-feather="git-merge"></i></div>
+                            order
+                        </a>
                         {{-- <a class="nav-link" href="/category">
                             <div class="nav-link-icon"><i data-feather="git-merge"></i></div>
                             category Product
