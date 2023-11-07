@@ -26,56 +26,38 @@
                         <div class="form-group">
                             <label class="small mb-1">Background <span class="text-danger">*</span></label>
                             <input id="background-image-input" class="form-control form-control-solid" name="background" type="file" placeholder="Background" value="{{ old('background', $model->background) }}" />
-                            <br>
-                            <img style="width: 200px; height: auto;" id="preview_background" src="#" alt="Preview Gambar">
                         </div>
                         <div class="form-group">
                             <label class="small mb-1">Mockup Image <span class="text-danger">*</span></label>
-                            <input id="mockup-image-input" class="form-control form-control-solid" name="code" type="file" placeholder="Mockup image" value="{{ old('code', $model->code) }}" />
-                            <br>
-                            <img style="width: 200px; height: auto;" id="preview_mockup" src="#" alt="Preview Gambar">
+                            <input id="mockupimageinput" class="form-control form-control-solid" name="code" type="file" placeholder="Mockup image" value="{{ old('code', $model->code) }}" />
                         </div>
                         <div class="form-group">
                             <label class="small mb-1">border cover<span class="text-danger">*</span></label>
                             <input id="bordercover" class="form-control form-control-solid" name="bordercover" type="file" placeholder="Mockup image" value="{{ old('cover_border', $model->cover_border) }}" />
-                            <br>
-                            <img style="width: 200px; height: auto;" id="bordercover_preview" src="#" alt="Preview Gambar">
                         </div>
                         <div class="form-group">
                             <label class="small mb-1">kiri atas</label>
                             <input id="kiriatas" class="form-control form-control-solid" name="kiriatas" type="file" placeholder="Mockup image" value="{{ old('kiri_atas', $model->kiri_atas) }}" />
-                            <br>
-                            <img style="width: 200px; height: auto;" id="kiriatas_preview" src="#" alt="Preview Gambar">
                         </div>
                         <div class="form-group">
                             <label class="small mb-1">kanan atas</label>
                             <input id="kananatas" class="form-control form-control-solid" name="kananatas" type="file" placeholder="Mockup image" value="{{ old('kanan_atas', $model->kanan_atas) }}" />
-                            <br>
-                            <img style="width: 200px; height: auto;" id="kananatas_preview" src="#" alt="Preview Gambar">
                         </div>
                         <div class="form-group">
                             <label class="small mb-1">tengah atas</label>
                             <input id="tengahatas" class="form-control form-control-solid" name="tengahatas" type="file" placeholder="Mockup image" value="{{ old('tengah_atas', $model->tengah_atas) }}" />
-                            <br>
-                            <img style="width: 200px; height: auto;" id="tengahatas_preview" src="#" alt="Preview Gambar">
                         </div>
                         <div class="form-group">
                             <label class="small mb-1">kanan bawah</label>
                             <input id="kananbawah" class="form-control form-control-solid" name="kananbawah" type="file" placeholder="Mockup image" value="{{ old('kanan_bawah', $model->kanan_bawah) }}" />
-                            <br>
-                            <img style="width: 200px; height: auto;" id="kananbawah_preview" src="#" alt="Preview Gambar">
                         </div> 
                         <div class="form-group">
                             <label class="small mb-1">kiri bawah</label>
                             <input id="kiribawah" class="form-control form-control-solid" name="kiribawah" type="file" placeholder="Mockup image" value="{{ old('kiri_bawah', $model->kiri_bawah) }}" />
-                            <br>
-                            <img style="width: 200px; height: auto;" id="kiribawah_preview" src="#" alt="Preview Gambar">
                         </div> 
                         <div class="form-group">
                             <label class="small mb-1">tengah bawah</label>
                             <input id="tengahbawah" class="form-control form-control-solid" name="tengahbawah" type="file" placeholder="Mockup image" value="{{ old('tengah_bawah', $model->tengah_bawah) }}" />
-                            <br>
-                            <img style="width: 200px; height: auto;" id="tengahbawah_preview" src="#" alt="Preview Gambar">
                         </div>
                         <div class="form-group">
                             <button class="btn btn-primary float-right" type="submit"><i class="far fa-save mr-1"></i> Simpan</button>
@@ -102,8 +84,8 @@
     });
 </script>
 <script>
-    var mockupInput = document.getElementById('mockup-image-input');
-    var mkpreviewImg = document.getElementById('preview_mockup');
+    var mockupInput = document.getElementById('mockupimageinput');
+    var mkpreviewImg = document.getElementById('preview_mockup123');
 
     mockupInput.addEventListener('change', function(e) {
       var file = mockupInput.files[0];

@@ -25,11 +25,12 @@ Route::group(['middleware' => ['auth', 'checkrole:1,2']], function() {
 // untuk superadmin
 Route::group(['middleware' => ['auth', 'checkrole:1']], function() {
     Route::get('/superadmin', [SuperadminController::class, 'index'])->name('dashboard.admin');
-    Route::get('/superadmin/themes', [App\Http\Controllers\Admin\Themes\ThemesController::class, 'index'])->name('dashboard.admin.themes');
+    Route::get('/superadmin/themes', [App\Http\Controllers\Admin\Themes\ThemesController::class, 'index'])->name('dashboard.themes.admin');
     Route::get('/superadmin/create/themes', [App\Http\Controllers\Admin\Themes\ThemesController::class, 'create'])->name('dashboard.admin.create.themes');
     Route::post('/superadmin/store/themes', [App\Http\Controllers\Admin\Themes\ThemesController::class, 'store'])->name('dashboard.admin.store.themes');
     Route::get('/superadmin/edit/themes/{id}', [App\Http\Controllers\Admin\Themes\ThemesController::class, 'edit'])->name('dashboard.admin.edit.themes');
-    Route::get('/superadmin/update/themes/{id}', [App\Http\Controllers\Admin\Themes\ThemesController::class, 'update'])->name('dashboard.admin.update.themes');
+    Route::post('/superadmin/update/themes/{id}', [App\Http\Controllers\Admin\Themes\ThemesController::class, 'update'])->name('dashboard.admin.update.themes');
+    Route::get('/superadmin/show/themes/{id}', [App\Http\Controllers\Admin\Themes\ThemesController::class, 'show'])->name('dashboard.admin.show.themes');
 });
 
 // untuk pegawai

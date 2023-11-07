@@ -924,3 +924,46 @@ h6 {
   text-align: left;
 }
 
+.card {
+  background-color: #a9a9a936;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 18px;
+}
+
+.card-header {
+  background-color: #eee;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+.card-footer {
+  background-color: #eee;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.row-acara {
+  display: flex;
+  flex-direction: row;
+}
+
+.col-acara {
+  flex: 1;
+}
+
+@media (max-width: 576px) {
+  .row-acara {
+    flex-direction: column;
+  }
+
+  .col-acara {
+    width: 100%;
+    overflow: auto;
+  }
+}

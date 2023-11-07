@@ -65,6 +65,10 @@
                             <div class="nav-link-icon"><i data-feather="activity"></i></div>
                             Dashboard
                         </a>
+                        <a class="nav-link" href="{{ route('dashboard.themes.admin') }}">
+                            <div class="nav-link-icon"><i data-feather="box"></i></div>
+                            Theme
+                        </a>
                         {{-- <a class="nav-link" href="/category">
                             <div class="nav-link-icon"><i data-feather="git-merge"></i></div>
                             category Product

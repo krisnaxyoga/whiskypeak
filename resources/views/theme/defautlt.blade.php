@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    @foreach ($undangan_pengaturan as $row)
+    {{-- @foreach ($undangan_pengaturan as $row) --}}
         @php
             // $kunci = $row->kunci;
             $kunci = 'mIjh78y8ge13b89d99c1a29132e57d2ca';
         @endphp
-    @endforeach
+    {{-- @endforeach --}}
 
     @php
         // $musiknya = '/assets/music/' . $users_order_musik[0]->musik;
@@ -53,7 +53,8 @@
         {{-- <meta property="og:title" content="The Wedding of {{ $row->nama_panggilan_pria }} & {{ $row->nama_panggilan_wanita }}"> --}}
 
         <meta property="og:title" content="The Wedding of jhon & maria">
-        <meta property="og:description" content="Hello @if (isset($invite)){{ $invite }}@endif! Kamu Di Undang..">
+        {{-- <meta property="og:description" content="Hello @if (isset($invite)){{ $invite }}@endif! Kamu Di Undang.."> --}}
+        <meta property="og:description" content="Hello Jhon! Kamu Di Undang..">
         {{-- <meta property="og:url" content="{{ base_url(''.$domain.'/'.$tamu_undangan) }}"> --}}
         <meta property="og:image" itemprop="image" content="{{ $kitaPNG }}">
         <meta property="og:image:width" content="300">
@@ -72,14 +73,15 @@
     @endif --}}
 </head>
 
-<body>
+<body style="background: url({{ $theme->background }})">
 <!-- ============== HALAMAN AWAL =============== -->
 <div class="thebegining">
     <div class="content-thebegining fadeInUp">
         <div class="kotak_cover">
             <img src="{{ $kitaPNG }}" class="cover-foto"/>
             <!-- image border cover -->
-            <img src="{{asset('assets/themes/Balinese_WD1/img/bg_flower.png')}}" class="cover-border spin" /><br>
+            {{-- <img src="{{asset('assets/themes/Balinese_WD1/img/bg_flower.png')}}" class="cover-border spin" /><br> --}}
+            <img src="{{$theme->cover_border}}" class="cover-border spin" /><br>
             <!-- image border cover -->
         </div>
     </div>
@@ -103,10 +105,10 @@
                     <span>Kepada Yth:</span>
                 </div>
                 <div class="salam_kotak_nama_undangan">
-                    {{ $invite }}
+                    {{-- {{ $invite }} --}} juana
                 </div>
             </div>
-        @else
+        @else 
             <div class="salam_kotak_nama_undangan_notfound">
                 Anda diundang ke pesta pernikahan kami &#128512;
             </div>
@@ -145,12 +147,19 @@
 <div class="dekorasi-all fadeInUp">
     {{-- GAMBAR DEKORASI TENGAH --}}
     
-    {{-- <img id="" src="{{ asset('assets/themes/Balinese_WD1/img/top_flower.png') }}" class="imgatas"> --}}
+    @if($theme->tengah_atas != 0)
+        <img id="" src="{{ $theme->tengah_atas }}" class="imgatas">
+    @endif
 
     {{-- GAMBAR DEKORASI KIRI --}}
-    <img src="{{ asset('assets/themes/Balinese_WD1/img/kiri-atas.png') }}" class="imgatas-kiri">
+    @if($theme->kiri_atas != 0)
+          <img src="{{ $theme->kiri_atas }}" class="imgatas-kiri">
+    @endif
+  
     {{-- GAMBAR DEKORASI KANAN --}}
-    <img src="{{ asset('assets/themes/Balinese_WD1/img/kanan-atas.png') }}" class="imgatas-kanan"/>
+    @if($theme->kanan_atas != 0)
+        <img src="{{ $theme->kanan_atas }}" class="imgatas-kanan"/>
+    @endif
 </div>
 
 <div class="dekorasi-sampul fadeInUp">
@@ -158,9 +167,13 @@
     {{-- <img id="" src="{{ asset('assets/themes/Balinese_WD1/img/top_flower.png') }}" class="imgatas"> --}}
 
     {{-- GAMBAR DEKORASI KIRI --}}
-    <img src="{{ asset('assets/themes/Balinese_WD1/img/kiri-atas.png') }}" class="imgatas-kiri">
+    @if($theme->kiri_atas != 0)
+          <img src="{{ $theme->kiri_atas }}" class="imgatas-kiri">
+    @endif
     {{-- GAMBAR DEKORASI KANAN --}}
-    <img src="{{ asset('assets/themes/Balinese_WD1/img/kanan-atas.png') }}" class="imgatas-kanan">
+    @if($theme->kanan_atas != 0)
+        <img src="{{ $theme->kanan_atas }}" class="imgatas-kanan"/>
+    @endif
 </div>
 
 <div id="konten" style="z-index: 1;">
@@ -173,12 +186,12 @@
          ?>
 	<!-- ============== SAMPUL =============== -->
 
-	<div id="sampul-konten" class="konten" >
+	<div id="sampul-konten" class="konten" style="background: url({{ $theme->background }})">
       	<table style="width: 100%;margin-top:-50px"> <!-- tambahkan margin-top:-XX jika kurang ketas -->
       		<tbody>
       		 <tr>
                 <th style="text-align: center;">
-                    <span class="the-wedding fadeInUp">- THE WEDDING OF -</span>
+                    <span class="the-wedding fadeInUp">- We Are Getting Married -</span>
                 </th>
             </tr>
       		<tr>
@@ -199,7 +212,7 @@
 					<img src="{{ $kitaPNG }} " class="cover-foto fadeInUp"/>
 
 					<!-- image border cover -->
-                    <img src="{{ asset('assets/themes/Balinese_WD1/img/bg_flower.png') }}" class="cover-border spin" /><br>
+                    <img src="{{$theme->cover_border}}" class="cover-border spin" /><br>
 					<!-- image border cover -->
 
                 </th>
@@ -271,66 +284,80 @@
             {{-- {{ $kata2_acara_1 }} --}}
         </div>
 
-        <div class="acaranya">
-            <table class="tb-acara fadeInUp">
-                <thead>
-                    <th colspan="4" class="acara-title">- AKAD NIKAH -</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th class="tb-ic-acara"><i class="mdi mdi-calendar icon-acara"></i></th>
-                        <th class="tb-ket-acara"> Tanggal</th>
-                        <th class="tb-anu-acara">:</th>
-                        <th class="tb-isi-acara" id="tanggal-acara-akad">{{ $tanggal_akad }}</th>
-                    </tr>
-
-                    <tr>
-                        <th class="tb-ic-acara"><i class="mdi mdi-timer icon-acara"></i></th>
-                        <th class="tb-ket-acara"> Jam</th>
-                        <th class="tb-anu-acara">:</th>
-                        <th class="tb-isi-acara">{{ now() }}</th>
-                    </tr>
-
-                    <tr>
-                        <th class="tb-ic-acara"><i class="mdi mdi-map-marker icon-acara"></i></th>
-                        <th class="tb-ket-acara"> Tempat</th>
-                        <th class="tb-anu-acara">:</th>
-                        {{-- <th class="tb-isi-acara">{{ $row_users_acara->tempat_akad }}<br>{{ $row_users_acara->alamat_akad }}</th> --}}
-                        <th class="tb-isi-acara">
-                            gedung wp <br>
-                            jl.chanima
-                        </th>
-                    </tr>
-                </tbody>
-            </table>
-
-            <table class="tb-acara fadeInUp">
-                <thead>
-                    <th colspan="4" class="acara-title fadeInUp">- RESEPSI -</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th class="tb-ic-acara"><i class="mdi mdi-calendar icon-acara"></i></th>
-                        <th class="tb-ket-acara fadeInUp"> Tanggal</th>
-                        <th class="tb-anu-acara">:</th>
-                        <th class="tb-isi-acara fadeInUp" id="tanggal-acara-resepsi">{{ $tanggal_resepsi }}</th>
-                    </tr>
-
-                    <tr>
-                        <th class="tb-ic-acara"><i class="mdi mdi-timer icon-acara"></i></th>
-                        <th class="tb-ket-acara fadeInUp"> Jam</th>
-                        <th class="tb-anu-acara fadeInUp">:</th>
-                        <th class="tb-isi-acara fadeInUp">{{ now() }}</th>
-                    </tr>
-
-                    <tr>
-                        <th class="tb-ic-acara"><i class="mdi mdi-map-marker icon-acara"></i></th>
-                        <th class="tb-ket-acara fadeInUp"> Tempat</th>
-                        <th class="tb-anu-acara fadeInUp">: tess</th>
-                        {{-- <th class="tb-isi-acara">{{ $row_users_acara->tempat_resepsi }}<br>{{ $row_users_acara->alamat_resepsi }}</th> --}}
-                    </tr>
-                </tbody>
-            </table>
+        <div class="acaranya row-acara">
+            <div class="col-acara">
+                <div class="card fadeInUp">
+                    <div class="card-body">
+                        <table class="tb-acara fadeInUp">
+                            <thead>
+                                <th colspan="4" class="acara-title">- AKAD NIKAH -</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th class="tb-ic-acara"><i class="mdi mdi-calendar icon-acara"></i></th>
+                                    <th class="tb-ket-acara"> Tanggal</th>
+                                    <th class="tb-anu-acara">:</th>
+                                    <th class="tb-isi-acara" id="tanggal-acara-akad">{{ $tanggal_akad }}</th>
+                                </tr>
+            
+                                <tr>
+                                    <th class="tb-ic-acara"><i class="mdi mdi-timer icon-acara"></i></th>
+                                    <th class="tb-ket-acara"> Jam</th>
+                                    <th class="tb-anu-acara">:</th>
+                                    <th class="tb-isi-acara">{{ now() }}</th>
+                                </tr>
+            
+                                <tr>
+                                    <th class="tb-ic-acara"><i class="mdi mdi-map-marker icon-acara"></i></th>
+                                    <th class="tb-ket-acara"> Tempat</th>
+                                    <th class="tb-anu-acara">:</th>
+                                    {{-- <th class="tb-isi-acara">{{ $row_users_acara->tempat_akad }}<br>{{ $row_users_acara->alamat_akad }}</th> --}}
+                                    <th class="tb-isi-acara">
+                                        gedung wp <br>
+                                        jl.chanima
+                                    </th>
+                                </tr>
+                            </tbody>
+                        </table>
+            
+                    </div>
+                </div>
+            </div>
+            <div class="col-acara">
+                <div class="card fadeInUp">
+                    <div class="card-body">
+                        <table class="tb-acara fadeInUp">
+                            <thead>
+                                <th colspan="4" class="acara-title fadeInUp">- RESEPSI -</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th class="tb-ic-acara"><i class="mdi mdi-calendar icon-acara"></i></th>
+                                    <th class="tb-ket-acara fadeInUp"> Tanggal</th>
+                                    <th class="tb-anu-acara">:</th>
+                                    <th class="tb-isi-acara fadeInUp" id="tanggal-acara-resepsi">{{ $tanggal_resepsi }}</th>
+                                </tr>
+            
+                                <tr>
+                                    <th class="tb-ic-acara"><i class="mdi mdi-timer icon-acara"></i></th>
+                                    <th class="tb-ket-acara fadeInUp"> Jam</th>
+                                    <th class="tb-anu-acara fadeInUp">:</th>
+                                    <th class="tb-isi-acara fadeInUp">{{ now() }}</th>
+                                </tr>
+            
+                                <tr>
+                                    <th class="tb-ic-acara"><i class="mdi mdi-map-marker icon-acara"></i></th>
+                                    <th class="tb-ket-acara fadeInUp"> Tempat</th>
+                                    <th class="tb-anu-acara fadeInUp">: tess</th>
+                                    {{-- <th class="tb-isi-acara">{{ $row_users_acara->tempat_resepsi }}<br>{{ $row_users_acara->alamat_resepsi }}</th> --}}
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            
         </div>
 
         {{-- Load Sepatah kata di users_Mempelai --}}
@@ -410,7 +437,7 @@
         <div class="row fadeInUp">
             <div class="col-12">
                 <div class="form-group">
-                    <input id="doa_dan_ucapan_nama_pengunjung" type="text" class="form-control mt-2" placeholder="Nama Anda" value="{{ $invite }}" required>
+                    <input id="doa_dan_ucapan_nama_pengunjung" type="text" class="form-control mt-2" placeholder="Nama Anda" value="" required>
                 </div>
             </div>
             <div class="col-6">
@@ -776,21 +803,34 @@
 
 <div class="dekorasi-all dekorasi-all-bawah">
     <!-- GAMBAR DEKORASI TENGAH -->
-    {{-- <img class="imgbawah" src="{{ asset('assets/themes/Balinese_WD1/img/bottom_flower.png') }}"> --}}
+    @if($theme->tengah_bawah != 0)
+    <img class="imgbawah" src="{{$theme->tengah_bawah}}">
+    @endif
     <!-- GAMBAR DEKORASI KIRI -->
-    <img class="imgbawah-kanan fadeInUp" src="{{ asset('assets/themes/Balinese_WD1/img/kanan-bawah.png') }}">
+    @if($theme->kanan_bawah != 0)
+    <img class="imgbawah-kanan fadeInUp" src="{{ $theme->kanan_bawah }}">
+    @endif
     <!-- GAMBAR DEKORASI KIRI -->
-     <img class="imgbawah-kiri fadeInUp" src="{{ asset('assets/themes/Balinese_WD1/img/kiri-bawah.png') }}"> 
+    @if($theme->kiri_bawah != 0)
+     <img class="imgbawah-kiri fadeInUp" src="{{ $theme->kiri_bawah }}">
+     @endif
 </div>
 
 <div class="dekorasi-sampul dekorasi-sampul-bawah">
     <!-- GAMBAR DEKORASI TENGAH -->
    
-    {{-- <img class="imgbawah" src="{{ asset('assets/themes/Balinese_WD1/img/bottom_flower.png') }}">  --}}
+    @if($theme->tengah_bawah != 0)
+    <img class="imgbawah" src="{{$theme->tengah_bawah}}">
+    @endif
+
     <!-- GAMBAR DEKORASI KIRI -->
-    <img class="imgbawah-kanan fadeInUp" src="{{ asset('assets/themes/Balinese_WD1/img/kanan-bawah.png') }}"> 
+    @if($theme->kanan_bawah != 0)
+    <img class="imgbawah-kanan fadeInUp" src="{{ $theme->kanan_bawah }}"> 
+    @endif
     <!-- GAMBAR DEKORASI KIRI -->
-    <img class="imgbawah-kiri fadeInUp" src="{{ asset('assets/themes/Balinese_WD1/img/kiri-bawah.png') }}"> 
+    @if($theme->kiri_bawah != 0)
+    <img class="imgbawah-kiri fadeInUp" src="{{ $theme->kiri_bawah }}"> 
+    @endif
 </div>
 
 <!-- mengirimkan data PHP ke JavaScript -->
