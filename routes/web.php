@@ -29,8 +29,9 @@ Route::group(['middleware' => ['auth', 'checkrole:1']], function() {
     Route::get('/superadmin/create/themes', [App\Http\Controllers\Admin\Themes\ThemesController::class, 'create'])->name('dashboard.admin.create.themes');
     Route::post('/superadmin/store/themes', [App\Http\Controllers\Admin\Themes\ThemesController::class, 'store'])->name('dashboard.admin.store.themes');
     Route::get('/superadmin/edit/themes/{id}', [App\Http\Controllers\Admin\Themes\ThemesController::class, 'edit'])->name('dashboard.admin.edit.themes');
-    Route::post('/superadmin/update/themes/{id}', [App\Http\Controllers\Admin\Themes\ThemesController::class, 'update'])->name('dashboard.admin.update.themes');
+    Route::put('/superadmin/update/themes/{id}', [App\Http\Controllers\Admin\Themes\ThemesController::class, 'update'])->name('dashboard.admin.update.themes');
     Route::get('/superadmin/show/themes/{id}', [App\Http\Controllers\Admin\Themes\ThemesController::class, 'show'])->name('dashboard.admin.show.themes');
+    Route::delete('/superadmin/destroy/themes/{id}', [App\Http\Controllers\Admin\Themes\ThemesController::class, 'destroy'])->name('dashboard.admin.destroy.themes');
 });
 
 // untuk pegawai

@@ -28,7 +28,7 @@
                                     <td><img src="{{ asset($item->code) }}" style="width:200px" alt=""> </td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->created_at }}</td>
-                                    <td><a href="" class="btn btn-datatable btn-icon btn-transparent-dark mr-2"><i data-feather="edit"></i></a>
+                                    <td><a href="{{route('dashboard.admin.edit.themes',$item->id)}}" class="btn btn-datatable btn-icon btn-transparent-dark mr-2"><i data-feather="edit"></i></a>
                                         <a href="{{route('dashboard.admin.show.themes',$item->id)}}" class="btn btn-datatable btn-icon btn-transparent-dark mr-2"><i data-feather="eye"></i></a>
 
                                         <form class="d-inline" action="" method="POST" onSubmit="return confirm('Apakah anda yakin akan menghapus data ini?');">
