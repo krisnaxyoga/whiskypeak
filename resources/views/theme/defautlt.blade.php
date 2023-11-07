@@ -804,7 +804,7 @@
 <div class="dekorasi-all dekorasi-all-bawah">
     <!-- GAMBAR DEKORASI TENGAH -->
     @if($theme->tengah_bawah != 0)
-    <img class="imgbawah" src="{{$theme->tengah_bawah}}">
+    <img class="imgbawah fadeInUp" src="{{$theme->tengah_bawah}}">
     @endif
     <!-- GAMBAR DEKORASI KIRI -->
     @if($theme->kanan_bawah != 0)
