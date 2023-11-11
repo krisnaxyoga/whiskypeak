@@ -110,7 +110,7 @@ h6 {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: #fffcf5;
+  /* background: #fffcf5; */
 }
 
 
@@ -991,4 +991,21 @@ h6 {
 
 #musicIcon {
     display: inline; /* Tampilkan ikon musik saat sedang diputar */
+}
+
+.back-radius{
+  border-radius: 2rem;
+  background:#ffffff;
+  /* box-shadow: 0 0.15rem 1.75rem 0 rgba(31, 45, 65, 0.15) !important; */
+}
+
+.back-radiusatas{
+  border-radius: 2rem 2rem 0 0;
+  background:#ffffff;
+  /* box-shadow: 0 0.15rem 1.75rem 0 rgba(31, 45, 65, 0.15) !important; */
+}
+.back-radiusbawah{
+  border-radius: 0 0 2rem 2rem;
+  background:#ffffff;
+  /* box-shadow: 0 0.15rem 1.75rem 0 rgba(31, 45, 65, 0.15) !important; */
 }

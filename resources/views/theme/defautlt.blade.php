@@ -236,8 +236,9 @@
 		// }
 		?>
 		{{-- <p class="mempelai-intermezzo" ><?php //echo $kata2_mempelai; ?></p> --}}
-        <p class="mempelai-intermezzo fadeInUp" >kata kata dari mempelai</p>
-
+        @if($ThemeSepatahkata->kategori == "sambutan")
+        <p class="mempelai-intermezzo fadeInUp" >{{$ThemeSepatahkata->description}}</p>
+        @endif
 
 		<img src="{{ asset($groomPNG) }}" class="mempelai-img fadeInUp" />
 
@@ -279,7 +280,7 @@
                     @endif
                 @endif
             @endforeach --}}
-            sepatah_kata_isi
+            {{-- sepatah_kata_isi --}}
 
             {{-- {{ $kata2_acara_1 }} --}}
         </div>
@@ -371,7 +372,8 @@
                 @endif
             @endif
         @endforeach --}}
-        <p class="fadeInUp">sepatah_kata_isi2</p>
+        {{-- <p class="fadeInUp"> --}}
+        {{-- </p> --}}
         {{-- {{ $kata2_acara_2 }} --}}
     </div>
 {{-- @endforeach --}}
@@ -594,7 +596,7 @@
             <div class="section-title fadeInUp">
                 <h2>Denah Lokasi<br />Akad & Resepsi </h2>
             </div>
-            <div class="col-12 maps fadeInUp">bingkisan-konten
+            <div class="col-12 maps fadeInUp">
                 {{-- {!! $gmap_sebenarnya !!} --}}
             </div>
         </div>
@@ -662,7 +664,7 @@
 <!-- ============== BOTTOM NAVIGATION =============== -->
 <nav class="mobile-bottom-nav2" id="nav">
 
-	<div class="container-fluid px-0">
+	<div class="container back-radius px-0">
 	    <div class="row no-gutters">
 			<div class="col-12" style="display: flex;margin-bottom: 5px;margin-top: 5px;" id="hehe">
 
@@ -699,7 +701,7 @@
 	</div>
 </nav>
 <nav class="mobile-bottom-nav2" id="nav2" style="display: none;">
-    <div class="container-fluid px-0">
+    <div class="container back-radiusatas px-0">
         <div class="row no-gutters">
             <div class="col-12" style="display: flex; margin-bottom: 5px; margin-top: 5px;" id="hehe">
                 <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active" id="sampul">
@@ -742,7 +744,7 @@
         </div>
     </div>
 
-    <div class="container-fluid px-0">
+    <div class="container back-radiusbawah px-0">
         <div class="row no-gutters">
             <div class="col-12" style="display: flex; margin-bottom: 5px; margin-top: 5px;">
                 <div class="mobile-bottom-nav__item" id="users_album" >
