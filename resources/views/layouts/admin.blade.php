@@ -69,7 +69,7 @@
                             <div class="nav-link-icon"><i data-feather="box"></i></div>
                             Theme
                         </a>
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{route('sepatahkata.index')}}">
                             <div class="nav-link-icon"><i data-feather="git-merge"></i></div>
                             kata kata
                         </a>
