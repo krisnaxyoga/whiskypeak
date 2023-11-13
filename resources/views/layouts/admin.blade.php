@@ -73,7 +73,7 @@
                             <div class="nav-link-icon"><i data-feather="git-merge"></i></div>
                             kata kata
                         </a>
-                         <a class="nav-link" href="#">
+                         <a class="nav-link" href="{{route('pacage.index')}}">
                             <div class="nav-link-icon"><i data-feather="git-merge"></i></div>
                             Paket undangan
                         </a>

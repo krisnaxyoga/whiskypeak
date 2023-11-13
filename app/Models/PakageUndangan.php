@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class PakageUndangan extends Model
 {
     use HasFactory;
+
+    public function themesell() {
+        return $this->hasMany(ThemeSell::class);
+    }
 }

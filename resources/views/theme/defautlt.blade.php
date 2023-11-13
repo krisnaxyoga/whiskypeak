@@ -204,7 +204,7 @@
       		</tr>
       		<tr>
       			<th style="text-align: center;width: 40%;padding: 20px;">
-
+                           
                 </th>
       		</tr>
             <tr>
@@ -219,6 +219,8 @@
             </tr>
       		</tbody>
       	</table>
+
+         
     </div>
 
 	<!-- ============== users_MEMPELAI =============== -->
@@ -361,6 +363,24 @@
 
         </div>
 
+        @if($Quote)
+        <div class="acaranya row-acara">
+            <div class="col-acara">
+                <div class="card fadeInUp">
+                    <div class="card-body">
+                            <p class="mempelai-intermezzo fadeInUp" >{{$Quote->description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
+
+        <div class="section-title fadeInUp">
+            <h2>Countdown</h2>
+        </div>
+        <div id="timer" class="fadeInUp"></div>
+
+        <input type="date" id="date" value="2023-12-15" hidden/>   
         {{-- Load Sepatah kata di users_Mempelai --}}
         {{-- @foreach($undangan_sepatah_kata as $row_undangan_sepatah_kata_acara2)
             @if($row_undangan_sepatah_kata_acara2->sepatah_kata_halaman == "acara")
@@ -872,6 +892,70 @@
         }
     });
     </script>
+   <script>
+    // Dapatkan tanggal dan waktu sekarang
+    const now = new Date();
 
+    // Buat elemen input untuk memasukkan tanggal acara
+    const inputDate = document.getElementById("date");
+
+    // Buat fungsi untuk mendapatkan tanggal acara dari input value
+    function getDateFromInput() {
+      return new Date(inputDate.value);
+    }
+
+    // Hitung selisih waktu antara sekarang dan tanggal acara
+    const diff = getDateFromInput().getTime() - now.getTime();
+
+    // Buat variabel untuk menyimpan sisa waktu
+    let remainingTime = diff;
+
+    // Buat fungsi untuk memperbarui timer
+    function updateTimer() {
+      // Kurangi sisa waktu dengan 1 detik
+      remainingTime -= 1000;
+
+      // Jika sisa waktu sudah habis, berhenti memperbarui timer
+      if (remainingTime <= 0) {
+        clearInterval(timerInterval);
+        return;
+      }
+
+      // Hitung sisa waktu dalam bentuk hari, jam, menit, dan detik
+      const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+      // Tampilkan sisa waktu di elemen `div` dengan ID `timer`
+      document.getElementById("timer").innerHTML = `
+        <div class="acaranya" style="display:flex;justify-content: center;">
+            <div class="tanggal-weddingnya" style="margin-left:1rem">
+                <div class="tanggal-weddingnya-body">
+                    <p style="text-align: center !important;">${days} </p><p style="text-align: center !important;"> hari </p>
+                </div>
+            </div>
+            <div class="tanggal-weddingnya" style="margin-left:1rem">
+                <div class="tanggal-weddingnya-body">
+                   <p style="text-align: center !important;"> ${hours}</p><p style="text-align: center !important;"> jam  </p>
+                </div>
+            </div>
+            <div class="tanggal-weddingnya" style="margin-left:1rem">
+                <div class="tanggal-weddingnya-body">
+                    <p style="text-align: center !important;">${minutes}</p><p style="text-align: center !important;"> menit </p>
+                </div>
+            </div>
+            <div class="tanggal-weddingnya" style="margin-left:1rem">
+                <div class="tanggal-weddingnya-body">
+                  <p style="text-align: center !important;">${seconds}</p><p style="text-align: center !important;"> detik</p>
+                </div>
+            </div>
+        </div>
+      `;
+    }
+
+    // Mulai memperbarui timer setiap 1 detik
+    const timerInterval = setInterval(updateTimer, 1000);
+  </script>
 
 </html>

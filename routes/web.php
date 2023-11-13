@@ -37,6 +37,9 @@ Route::group(['middleware' => ['auth', 'checkrole:1']], function() {
     // kata kata
     Route::resource('/sepatahkata', App\Http\Controllers\Admin\Themes\SepatahKataController::class);
 
+     // Paket undangan
+     Route::resource('/pacage', App\Http\Controllers\Admin\Pacage\PacageController::class);
+
 });
 
 // untuk pegawai

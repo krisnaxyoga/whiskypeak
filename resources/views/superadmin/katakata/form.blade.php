@@ -27,12 +27,12 @@
                                 <option value="sambutan">Sambutan</option>
                                 {{-- <option value="kata_isi_1">kata isi pertama</option>
                                 <option value="kata_isi_2">kata isi kedua</option> --}}
-                                {{-- <option value="Quote">Quotes</option> --}}
+                                <option value="Quote">Quotes</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label class="small mb-1">Kata Kata</label>
-                           <textarea name="desc" class="form-control" id="" cols="30" rows="10"></textarea>
+                           <textarea name="desc" class="form-control" id="" cols="30" rows="10" value="{{ old('description', $model->description) }}">{{ old('description', $model->description) }}</textarea>
                         </div>
                         <div class="form-group">
                             <button class="btn btn-primary float-right" type="submit"><i class="far fa-save mr-1"></i> Simpan</button>

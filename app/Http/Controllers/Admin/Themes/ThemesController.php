@@ -148,9 +148,10 @@ class ThemesController extends Controller
     public function show(string $id)
     {
         $iduser = auth()->user()->id;
-        $ThemeSepatahkata = ThemeSepatahkata::where('user_id',$iduser)->first();
+        $ThemeSepatahkata = ThemeSepatahkata::where('user_id',$iduser)->where('kategori','sambutan')->first();
+        $Quote = ThemeSepatahkata::where('user_id',$iduser)->where('kategori','Quote')->first();
         $theme = Themes::find($id);
-        return view('theme.defautlt',compact('theme','ThemeSepatahkata'));
+        return view('theme.defautlt',compact('theme','ThemeSepatahkata','Quote'));
     }
 
     /**

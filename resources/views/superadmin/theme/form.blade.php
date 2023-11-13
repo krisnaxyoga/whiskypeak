@@ -123,6 +123,18 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                          <div class="col-lg-6">
+                            
+                            <span>Salam</span>
+                            <div class="form-group">
+                              <div class="toggle-switch">
+                                <input class="toggle-input" id="toggle" type="checkbox">
+                                <label class="toggle-label" for="toggle"></label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                         <div class="form-group mb-3">
                             <button class="btn btn-primary float-right" type="submit"><i class="far fa-save mr-1"></i> Simpan</button>
                         </div>
