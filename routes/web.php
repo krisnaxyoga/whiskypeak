@@ -40,6 +40,9 @@ Route::group(['middleware' => ['auth', 'checkrole:1']], function() {
      // Paket undangan
      Route::resource('/pacage', App\Http\Controllers\Admin\Pacage\PacageController::class);
 
+     // Paket undangan
+     Route::resource('/selltheme', App\Http\Controllers\Admin\Pacage\SellThemesController::class);
+
 });
 
 // untuk pegawai

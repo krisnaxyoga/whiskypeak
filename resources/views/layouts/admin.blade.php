@@ -77,9 +77,9 @@
                             <div class="nav-link-icon"><i data-feather="git-merge"></i></div>
                             Paket undangan
                         </a>
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{route('selltheme.index')}}">
                             <div class="nav-link-icon"><i data-feather="git-merge"></i></div>
-                            fitur
+                            sell theme
                         </a>
                         <a class="nav-link" href="#">
                             <div class="nav-link-icon"><i data-feather="git-merge"></i></div>

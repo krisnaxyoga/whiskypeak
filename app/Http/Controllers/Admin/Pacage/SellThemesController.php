@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin\Pacage;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ThemesSell;
+use App\Models\Themes;
+use App\Models\PakageUndangan;
 use Illuminate\Support\Facades\Validator;
 
 class SellThemesController extends Controller
@@ -26,8 +28,9 @@ class SellThemesController extends Controller
     {
 
         $model = new ThemesSell;
-
-        return view('superadmin.sellthemes.form',compact('model'));
+        $theme = Themes::all();
+        $pacage = PakageUndangan::all();
+        return view('superadmin.sellthemes.form',compact('model','theme','pacage'));
     }
 
     /**
@@ -36,7 +39,7 @@ class SellThemesController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required',
+            'pakage_id' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -78,7 +81,7 @@ class SellThemesController extends Controller
     public function update(Request $request, string $id)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required',
+            'pakage_id' => 'required',
         ]);
 
         if ($validator->fails()) {
