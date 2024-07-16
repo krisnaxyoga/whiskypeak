@@ -6,12 +6,13 @@ use App\Http\Controllers\RedirectController;
 use App\Http\Controllers\Admin\SuperadminController;
 use App\Http\Controllers\User\UserController;
 
-
 Route::get('/undangan', [App\Http\Controllers\User\Undangan\UndanganController::class, 'index'])->name('undangan.index');
+
+Route::get('/', [App\Http\Controllers\Landing\HomeController::class, 'index'])->name('home.index');
 //  jika user belum login
 Route::group(['middleware' => 'guest'], function() {
-    Route::get('/', [AuthController::class, 'login'])->name('login');
-    Route::post('/', [AuthController::class, 'dologin']);
+    Route::get('/login', [AuthController::class, 'login'])->name('login');
+    Route::post('/login', [AuthController::class, 'dologin']);
 
 });
 

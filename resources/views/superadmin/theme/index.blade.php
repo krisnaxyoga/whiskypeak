@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'themes')
+@section('title', 'themes2')
 @section('content')
 <section>
 <div class="container mt-4">
@@ -13,7 +13,7 @@
                     <a href="{{ route('dashboard.admin.create.themes') }}" class="btn btn-primary mb-2">add</a>
                     {{-- <a href="{{ route('excel.themes') }}" class="btn btn-success mb-2">Download Excel</a> --}}
                     <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <table class="table datatable">
                             <thead>
                                 <tr>
                                     <th>#</th>
