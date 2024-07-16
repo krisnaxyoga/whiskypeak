@@ -14,7 +14,7 @@ class HomeController extends Controller
     public function index()
     {
         $themesell = ThemesSell::all();
-        return view('');
+        return view('welcome');
     }
 
     /**

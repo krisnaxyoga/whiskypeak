@@ -9,6 +9,7 @@ use App\Http\Controllers\User\UserController;
 Route::get('/undangan', [App\Http\Controllers\User\Undangan\UndanganController::class, 'index'])->name('undangan.index');
 
 Route::get('/', [App\Http\Controllers\Landing\HomeController::class, 'index'])->name('home.index');
+// Route::get('/', [AuthController::class, 'login'])->name('login');
 //  jika user belum login
 Route::group(['middleware' => 'guest'], function() {
     Route::get('/login', [AuthController::class, 'login'])->name('login');
